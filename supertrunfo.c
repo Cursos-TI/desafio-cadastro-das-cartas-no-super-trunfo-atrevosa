@@ -22,7 +22,6 @@ int main() {
         printf("\n");
 
 //primeira carta (dados)
-
     printf("Digite os dados da primeira carta:\n");
     printf("Estado (A-H): ");
     scanf(" %c", &estado1);
@@ -30,7 +29,13 @@ int main() {
     scanf(" %s", codigo1);
     printf("Nome da Cidade: ");
     scanf(" %s", &nomeCidade1);
-    printf("População: ");
+
+/* aqui nao entendi porque que dá o erro: 
+"formats '%s' expects argument of type 'char*', but argument 2 has type 'char(*)[50]' [-Wformat=] gcc Ln 32, Col 14 e Ln 51, Col 14
+porque o codigo continua executável mas apresenta esses dois erros (iguais) no tipo char...
+  */
+
+printf("População: ");
     scanf(" %d", &populacao1);
     printf("Área (em km²) somente números: ");
     scanf(" %f", &area1);
@@ -49,6 +54,8 @@ int main() {
     scanf(" %s", codigo2);
     printf("Nome da Cidade: ");
     scanf(" %s", &nomeCidade2);
+    /* aqui aparece o mesmo erro de cima mas não faz o programa ter erros na execução */
+
     printf("População: ");
     scanf(" %d", &populacao2);
     printf("Área (em km²) somente números: ");
