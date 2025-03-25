@@ -19,7 +19,6 @@ int main() {
     printf("Carregando...... \n");
 
         printf("\n");
-        printf("\n");
 
 //primeira carta (dados)
     printf("Digite os dados da primeira carta:\n");
@@ -45,8 +44,7 @@ printf("População: ");
     scanf(" %d", &pontosturisticos1);   
 
  //segunda carta (entrada de dados)
-        printf("\n");
-
+    
     printf("\nDigite os dados da segunda carta:\n");
     printf("Estado (A-H): ");
     scanf(" %c", &estado2);
@@ -73,9 +71,9 @@ printf("População: ");
 
     printf("Carregando...... \n");
     printf("Confira os dados das cartas! \n");
-        printf("\n");
   
     printf("\nCarta 1:\n");
+        printf("\n");
     printf("Estado: %c\n", estado1);
     printf("Código: %s\n", codigo1);
     printf("Nome da Cidade: %s\n", nomeCidade1);
@@ -85,6 +83,7 @@ printf("População: ");
     printf("Número de Pontos Turísticos: %d\n", pontosturisticos1);
 
     printf("\nCarta 2:\n");
+        printf("\n");
     printf("Estado: %c\n", estado2);
     printf("Código: %s\n", codigo2);
     printf("Nome da Cidade: %s\n", nomeCidade2);
