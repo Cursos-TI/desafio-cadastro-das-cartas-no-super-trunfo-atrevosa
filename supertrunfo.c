@@ -5,7 +5,7 @@ int main() {
     char estado1, estado2;
     char codigo1[4], codigo2[4];
     char nomeCidade1[50], nomeCidade2[50];
-    float populacao1, populacao2;
+    unsigned long int populacao1, populacao2;
     float area1, area2, pib1, pib2;
     int pontosturisticos1, pontosturisticos2;    
 
@@ -98,5 +98,41 @@ int main() {
     printf("Densidade Populacional: %.2f hab/km²\n", densidade2);
     printf("PIB per Capita: R$ %.2f\n", pibpc2);
 
+
+//parte final
+
+// Cálculos
+float densidade1 = (float)populacao1 / area1;
+float pibpc1 = pib1 / (float)populacao1;
+float inversoDensidade1 = 1.0 / densidade1;
+float superPoder1 = populacao1 + area1 + pib1 + pontosturisticos1 + pibpc1 + inversoDensidade1;
+
+float densidade2 = (float)populacao2 / area2;
+float pibpc2 = pib2 / (float)populacao2;
+float inversoDensidade2 = 1.0 / densidade2;
+float superPoder2 = populacao2 + area2 + pib2 + pontosturisticos2 + pibpc2 + inversoDensidade2;
+
+//calculos de comparação
+
+int vPopulacao = populacao1 > populacao2;
+int vArea = area1 > area2;
+int vPIB = pib1 > pib2;
+int vPontos = pontosturisticos1 > pontosturisticos2;
+int vDensidade = densidade1 < densidade2; // menor vence
+int vPIBpc = pibpc1 > pibpc2;
+int vSuperPoder = superPoder1 > superPoder2;
+
+// Exibição saída
+
+printf("\n\nComparação de Cartas:\n\n");
+printf("População: Carta 1 venceu (%d)\n", vPopulacao);
+printf("Área: Carta 1 venceu (%d)\n", vArea);
+printf("PIB: Carta 1 venceu (%d)\n", vPIB);
+printf("Pontos Turísticos: Carta 1 venceu (%d)\n", vPontos);
+printf("Densidade Populacional: Carta 1 venceu (%d)\n", vDensidade);
+printf("PIB per Capita: Carta 1 venceu (%d)\n", vPIBpc);
+printf("Super Poder: Carta 1 venceu (%d)\n", vSuperPoder);
+
     return 0;
+    
 }
