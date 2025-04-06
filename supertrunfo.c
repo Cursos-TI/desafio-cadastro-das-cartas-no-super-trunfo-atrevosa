@@ -8,17 +8,9 @@ int main() {
     char estado1, estado2;
     char codigo1[4], codigo2[4];
     char nomeCidade1[50], nomeCidade2[50];
-    int populacao1, populacao2;
+    float populacao1, populacao2;
     float area1, area2, pib1, pib2;
-    int pontosturisticos1, pontosturisticos2;
-
-    // adicionando parte 2 do codigo
-
-    float densidade1 = populacao1 / area1;
-    float pibPerCapita1 = pib1 / populacao1;
-    
-    float densidade2 = populacao2 / area2;
-    float pibPerCapita2 = pib2 / populacao2;
+    int pontosturisticos1, pontosturisticos2;    
     
 
 //organização apresentação do programa
@@ -36,7 +28,8 @@ int main() {
     printf("Código da Carta (ex: A01): ");
     scanf(" %s", codigo1);
     printf("Nome da Cidade: ");
-    scanf(" %s", &nomeCidade1);
+    scanf(" %s", nomeCidade1);
+
 
 /* aqui nao entendi porque que dá o erro: 
 "formats '%s' expects argument of type 'char*', but argument 2 has type 'char(*)[50]' [-Wformat=] gcc Ln 32, Col 14 e Ln 51, Col 14
@@ -74,14 +67,12 @@ printf("População: ");
 
         printf("\n");
         printf("\n");
-
-
-        // NIVEL AVENTUREIRO - PIB E DENSIDADE 
-    /**   **Novos Atributos:**
-    *   Densidade Populacional: População / Área (`float`)
-    *   PIB per Capita: PIB / População (`float`)*/
-
     
+    float densidade1 = populacao1 / area1;
+    float pibpc1 = pib1 / populacao1;
+    float densidade2 = populacao2 / area2;
+    float pibpc2 = pib2 / populacao2;
+
 //exibição dos dados (resultados)
 
     printf("Carregando...... \n");
@@ -107,16 +98,14 @@ printf("População: ");
     printf("PIB: %.2f bilhões de reais\n", pib2);
     printf("Número de Pontos Turísticos: %d\n", pontosturisticos2);
 
-    // nivel básico
 
 printf("\n--- Resultado de Cálculos Densidade & PIB ---\n");
 printf("Carta 1:\n");
 printf("Densidade Populacional: %.2f hab/km²\n", densidade1);
-printf("PIB per Capita: R$ %.2f\n", pibPerCapita1);
-
+printf("PIB per Capita: R$ %.2f\n", pibpc1);
 printf("\nCarta 2:\n");
 printf("Densidade Populacional: %.2f hab/km²\n", densidade2);
-printf("PIB per Capita: R$ %.2f\n", pibPerCapita2);
+printf("PIB per Capita: R$ %.2f\n", pibpc2);
 
     return 0;
     
