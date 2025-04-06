@@ -1,9 +1,6 @@
-// Desafios Super Trunfo - Joana
-
 #include <stdio.h>
 
 //main
-
 int main() {
     char estado1, estado2;
     char codigo1[4], codigo2[4];
@@ -11,17 +8,19 @@ int main() {
     float populacao1, populacao2;
     float area1, area2, pib1, pib2;
     int pontosturisticos1, pontosturisticos2;    
-    
 
-//organização apresentação do programa
-        printf("\n");
+    //CODIGOS DE ENTRADA DE DADOS
+
+    printf("\n");
 
     printf("SUPER TRUNFO! \n");
     printf("Carregando...... \n");
 
-        printf("\n");
+    printf("\n");
 
-//primeira carta (dados)
+    //PRIMEIRA CARTA
+
+
     printf("Digite os dados da primeira carta:\n");
     printf("Estado (A-H): ");
     scanf(" %c", &estado1);
@@ -29,15 +28,8 @@ int main() {
     scanf(" %s", codigo1);
     printf("Nome da Cidade: ");
     scanf(" %s", nomeCidade1);
-
-
-/* aqui nao entendi porque que dá o erro: 
-"formats '%s' expects argument of type 'char*', but argument 2 has type 'char(*)[50]' [-Wformat=] gcc Ln 32, Col 14 e Ln 51, Col 14
-porque o codigo continua executável mas apresenta esses dois erros (iguais) no tipo char...
-  */
-
-printf("População: ");
-    scanf(" %d", &populacao1);
+    printf("População: ");
+    scanf(" %f", &populacao1);
     printf("Área (em km²) somente números: ");
     scanf(" %f", &area1);
     printf("PIB (em bilhões de reais) somente números: ");
@@ -45,19 +37,18 @@ printf("População: ");
     printf("Número de Pontos Turísticos: ");
     scanf(" %d", &pontosturisticos1);   
 
- //segunda carta (entrada de dados)
-    
+
+    //SEGUNDA CARTA
+
     printf("\nDigite os dados da segunda carta:\n");
     printf("Estado (A-H): ");
     scanf(" %c", &estado2);
     printf("Código da Carta (ex: B02): ");
     scanf(" %s", codigo2);
     printf("Nome da Cidade: ");
-    scanf(" %s", &nomeCidade2);
-    /* aqui aparece o mesmo erro de cima mas não faz o programa ter erros na execução */
-
+    scanf(" %s", nomeCidade2);
     printf("População: ");
-    scanf(" %d", &populacao2);
+    scanf(" %f", &populacao2);
     printf("Área (em km²) somente números: ");
     scanf(" %f", &area2);
     printf("PIB (em bilhões de reais) somente números: ");
@@ -65,48 +56,47 @@ printf("População: ");
     printf("Número de Pontos Turísticos: ");
     scanf(" %d", &pontosturisticos2);
 
-        printf("\n");
-        printf("\n");
-    
+    // CALCULOS DA PARTE 2 - DENSIDADE E PIB PER CAPTA FOI NECESSARIO CONVERTER PRA REAIS PRA PODER FUNCIONAR, ESTAVA DANDO ERRO DE INF NO CALCULO
+
     float densidade1 = populacao1 / area1;
-    float pibpc1 = pib1 / populacao1;
+    float pibpc1 = pib1 * 1000000000 / populacao1; // Convertendo PIB para reais
     float densidade2 = populacao2 / area2;
-    float pibpc2 = pib2 / populacao2;
+    float pibpc2 = pib2 * 1000000000 / populacao2; // Convertendo PIB para reais
 
-//exibição dos dados (resultados)
+    // EXIBIÇÃO SAIDA
 
-    printf("Carregando...... \n");
+    printf("\nCarregando...... \n");
     printf("Confira os dados das cartas! \n");
   
     printf("\nCarta 1:\n");
-        printf("\n");
+    printf("\n");
     printf("Estado: %c\n", estado1);
     printf("Código: %s\n", codigo1);
     printf("Nome da Cidade: %s\n", nomeCidade1);
-    printf("População: %d\n", populacao1);
+    printf("População: %.0f\n", populacao1);  // Corrigido para mostrar como inteiro
     printf("Área: %.2f km²\n", area1);
     printf("PIB: %.2f bilhões de reais\n", pib1);
     printf("Número de Pontos Turísticos: %d\n", pontosturisticos1);
 
     printf("\nCarta 2:\n");
-        printf("\n");
+    printf("\n");
     printf("Estado: %c\n", estado2);
     printf("Código: %s\n", codigo2);
     printf("Nome da Cidade: %s\n", nomeCidade2);
-    printf("População: %d\n", populacao2);
+    printf("População: %.0f\n", populacao2);  // Corrigido para mostrar como inteiro
     printf("Área: %.2f km²\n", area2);
     printf("PIB: %.2f bilhões de reais\n", pib2);
     printf("Número de Pontos Turísticos: %d\n", pontosturisticos2);
 
-
-printf("\n--- Resultado de Cálculos Densidade & PIB ---\n");
-printf("Carta 1:\n");
-printf("Densidade Populacional: %.2f hab/km²\n", densidade1);
-printf("PIB per Capita: R$ %.2f\n", pibpc1);
-printf("\nCarta 2:\n");
-printf("Densidade Populacional: %.2f hab/km²\n", densidade2);
-printf("PIB per Capita: R$ %.2f\n", pibpc2);
+    // EXIBIÇÃO DO CALCULO DE DENSIDADE E PIB
+    
+    printf("\n--- Resultado de Cálculos Densidade & PIB ---\n");
+    printf("Carta 1:\n");
+    printf("Densidade Populacional: %.2f hab/km²\n", densidade1);
+    printf("PIB per Capita: R$ %.2f\n", pibpc1);
+    printf("\nCarta 2:\n");
+    printf("Densidade Populacional: %.2f hab/km²\n", densidade2);
+    printf("PIB per Capita: R$ %.2f\n", pibpc2);
 
     return 0;
-    
 }
