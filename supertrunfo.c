@@ -5,11 +5,11 @@ int main() {
     char estado1, estado2;
     char codigo1[4], codigo2[4];
     char nomeCidade1[50], nomeCidade2[50];
-    unsigned long int populacao1, populacao2;
+    unsigned long int populacao1, populacao2; //mudança pra unsigned
     float area1, area2, pib1, pib2;
     int pontosturisticos1, pontosturisticos2;    
 
-    //CODIGOS DE ENTRADA DE DADOS
+    //CODIGOS DE ENTRADA DE DADOS (estetica kkk)
 
     printf("\n");
 
@@ -28,7 +28,7 @@ int main() {
     printf("Nome da Cidade: ");
     scanf(" %s", nomeCidade1);
     printf("População: ");
-    scanf(" %lu", &populacao1); // Alterado para %lu
+    scanf(" %lu", &populacao1); // Alterado para %lu depois de trocar pra unsigned
     printf("Área (em km²) somente números: ");
     scanf(" %f", &area1);
     printf("PIB (em bilhões de reais) somente números: ");
@@ -46,7 +46,7 @@ int main() {
     printf("Nome da Cidade: ");
     scanf(" %s", nomeCidade2);
     printf("População: ");
-    scanf(" %lu", &populacao2); // Alterado para %lu
+    scanf(" %lu", &populacao2); // %lu tbm ok
     printf("Área (em km²) somente números: ");
     scanf(" %f", &area2);
     printf("PIB (em bilhões de reais) somente números: ");
@@ -57,13 +57,13 @@ int main() {
     // CALCULOS DA PARTE 2 - DENSIDADE E PIB PER CAPTA FOI NECESSARIO CONVERTER PRA REAIS PRA PODER FUNCIONAR, ESTAVA DANDO ERRO DE INF NO CALCULO
 
     float densidade1 = (float)populacao1 / area1;
-    float pibpc1 = pib1 * 1000000000 / populacao1; // Convertendo PIB para reais
+    float pibpc1 = pib1 * 1000000000 / populacao1;
     float densidade2 = (float)populacao2 / area2;
-    float pibpc2 = pib2 * 1000000000 / populacao2; // Convertendo PIB para reais
+    float pibpc2 = pib2 * 1000000000 / populacao2;
 
     // EXIBIÇÃO SAIDA
 
-    printf("\nCarregando...... \n");
+    printf("\nCarregando...... \n"); //estetica
     printf("Confira os dados das cartas! \n");
   
     printf("\nCarta 1:\n");
@@ -86,7 +86,7 @@ int main() {
     printf("PIB: %.2f bilhões de reais\n", pib2);
     printf("Número de Pontos Turísticos: %d\n", pontosturisticos2);
 
-    // EXIBIÇÃO DO CALCULO DE DENSIDADE E PIB
+    // EXIBIÇÃO DO CALCULO DE DENSIDADE E PIB - parte 2
     
     printf("\n--- Resultado de Cálculos Densidade & PIB ---\n");
     printf("Carta 1:\n");
@@ -98,7 +98,7 @@ int main() {
 
     // Parte Final
 
-    // Cálculos do Super Poder
+    // Cálculos do Super Poder parte 3 do codigo
 
     float inversoDensidade1 = 1.0 / densidade1;
     float superPoder1 = populacao1 + area1 + pib1 + pontosturisticos1 + pibpc1 + inversoDensidade1;
@@ -108,7 +108,7 @@ int main() {
 
     printf("=== Entrando na parte de comparação ===\n");
 
-    // Cálculos de comparação
+    // Cálculos de comparação das cartas
 
     int vPopulacao = populacao1 > populacao2;
     int vArea = area1 > area2;
@@ -118,13 +118,16 @@ int main() {
     int vPIBpc = pibpc1 > pibpc2;
     int vSuperPoder = superPoder1 > superPoder2;
 
+    //teste de calculo
+
     printf("Densidade Populacional Carta 1: %.2f\n", densidade1);
     printf("Densidade Populacional Carta 2: %.2f\n", densidade2);
     
-    // Exibição saída
+    // Exibição saída final com cartas vencedoras
 
-// Comparações com o resultado do vencedor
     printf("Comparação de Cartas:\n\n");
+    
+// O número 1 indica que a Carta 1 venceu, o número 0 indica que a Carta 2 venceu
 
     printf("População: Carta %d venceu (%d)\n", vPopulacao ? 1 : 2, vPopulacao);
     printf("Área: Carta %d venceu (%d)\n", vArea ? 1 : 2, vArea);
