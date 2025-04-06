@@ -95,6 +95,7 @@ int main() {
     printf("\nCarta 2:\n");
     printf("Densidade Populacional: %.2f hab/km²\n", densidade2);
     printf("PIB per Capita: R$ %.2f\n", pibpc2);
+    printf("\n");
 
     // Parte Final
 
@@ -106,9 +107,7 @@ int main() {
     float inversoDensidade2 = 1.0 / densidade2;
     float superPoder2 = populacao2 + area2 + pib2 + pontosturisticos2 + pibpc2 + inversoDensidade2;
 
-    printf("=== Entrando na parte de comparação ===\n");
-
-    // Cálculos de comparação das cartas
+        // Cálculos de comparação das cartas
 
     int vPopulacao = populacao1 > populacao2;
     int vArea = area1 > area2;
@@ -119,14 +118,14 @@ int main() {
     int vSuperPoder = superPoder1 > superPoder2;
 
     //teste de calculo
-
+    printf("\n=== Teste de Calculo Densidade ===\n");
     printf("Densidade Populacional Carta 1: %.2f\n", densidade1);
     printf("Densidade Populacional Carta 2: %.2f\n", densidade2);
     
     // Exibição saída final com cartas vencedoras
 
-    printf("Comparação de Cartas:\n\n");
-    
+    printf("\nComparação das Cartas:\n\n");
+
 // O número 1 indica que a Carta 1 venceu, o número 0 indica que a Carta 2 venceu
 
     printf("População: Carta %d venceu (%d)\n", vPopulacao ? 1 : 2, vPopulacao);
